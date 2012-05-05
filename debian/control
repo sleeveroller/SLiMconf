@@ -1,0 +1,17 @@
+Source: slimconf
+Section: misc
+Priority: extra
+Maintainer: Philip Newborough <corenominal@corenominal.org>
+Build-Depends: debhelper (>= 5.0.0)
+Standards-Version: 3.9.1
+Homepage: http://crunchbang.org/
+
+Package: slimconf
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, slim, python, python-gi
+Description: GUI for editing SLiM settings
+ SLiMconf provides a graphical tool for editing
+ SLiM settings, including setting default users, 
+ enabling autologin, adjusting available sessions
+ and choosing themes.
+ .
