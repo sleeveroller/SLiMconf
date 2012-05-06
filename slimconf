@@ -1,9 +1,15 @@
 #!/usr/bin/python
 from gi.repository import Gtk
-import os, re, pwd, grp
+import os, re, pwd, grp, gettext
 
 class Handler:
     def onDeleteWindow(self, *args):
+        if builder.get_object('saveButton').get_sensitive() == True:
+            dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.WARNING, Gtk.ButtonsType.YES_NO, gettext.gettext("You have unsaved changes. Exit anyway?"))
+            response = dialog.run()
+            dialog.destroy()
+            if response == Gtk.ResponseType.NO:
+                return None
         Gtk.main_quit(*args)
     
     def saveSettings(self, *args):
